@@ -1,0 +1,25 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<!-- th는 Thymeleaf의 속성(prefix)이고, 여기서 th:each를 사용해서 Model 객체로 받은 데이터를 반복하며 화면에 출력하는 거야. -->
+<div class="container">
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>이름</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- GetMapping에서 model.addattribute를 통해 "members", members를 보냈는데 그 중 "members"가 아래 ${members}로 받는거임-->
+            <tr th:each="member : ${members}">
+                <td th:text="${member.id}"></td>
+                <td th:text="${member.name}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

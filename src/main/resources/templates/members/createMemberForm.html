@@ -1,0 +1,19 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div class="container">
+    <!-- 등록을 누르면 action URL(/members/new)로 POST 방식으로 넘어간다.(PostMapping 해 둔 곳으로) -->
+    <form action="/members/new" method="post">
+        <div class="form-group">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" placeholder="이름을 입력하세요">
+            <!-- name="name" 이 name을 보고 MemberForm의 private String name 변수로 값이 할당된다.-->
+            <!-- 그 후 PostMapping을 시킨 곳에서 MemberForm으로 받아서 Member 객체에 setName으로 이름을 부여한 뒤
+            MemberService의 join 메서드로 회원가입을 진행함. join 메서드 안에는 Repository의 save 메서드도 같이 들어있음.-->
+        </div>
+        <button type="submit">등록</button>
+    </form>
+</div> <!-- /container -->
+</body>
+</html>
